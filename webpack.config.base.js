@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -18,6 +19,10 @@ module.exports = {
             filename: 'index.html',
             title: 'React - Getting Started',
             template: './src/index.html'
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunk: 2
         })
     ]
 };

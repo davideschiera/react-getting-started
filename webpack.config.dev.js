@@ -1,13 +1,19 @@
 var config = require('./webpack.config.base');
 var webpack = require('webpack');
 
-config.entry = [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    './src/index'
-];
+config.entry = {
+    app: [
+        'webpack-dev-server/client?http://localhost:3000',
+        'webpack/hot/only-dev-server',
+        './src/index'
+    ],
+    vendor: [
+        'react',
+        'moment'
+    ]
+};
 
-config.output.filename = 'app.js';
+config.output.filename = '[name].js';
 
 config.module.loaders = [
     {

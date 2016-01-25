@@ -1,10 +1,16 @@
 var config = require('./webpack.config.base');
 
-config.entry = [
-    './src/index'
-];
+config.entry = {
+    app: [
+        './src/index'
+    ],
+    vendor: [
+        'react',
+        'moment'
+    ]
+};
 
-config.output.filename = 'app.[hash].js';
+config.output.filename = '[name].[chunkhash].js';
 
 config.module.loaders = [
     {
