@@ -11,7 +11,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.jsx$/,
-                loader: 'babel?presets[]=react'
+                loader: 'babel?presets[]=es2015,presets[]=react'
             }
         ]
     },
