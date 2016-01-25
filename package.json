@@ -1,0 +1,11 @@
+{
+  "name": "react-getting-started",
+  "version": "0.1.0",
+  "description": "Getting Started with React",
+  "author": "davideschiera",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
