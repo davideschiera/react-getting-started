@@ -7,6 +7,14 @@ module.exports = {
         filename: 'app.js'
     },
     devtool: 'source-map',
+    module: {
+        loaders: [
+            {
+                test: /\.jsx$/,
+                loader: 'babel?presets[]=react'
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
