@@ -3,5 +3,6 @@ module.exports = {
     output: {
         path: 'build',
         filename: 'app.js'
-    }
+    },
+    devtool: 'source-map'
 };
