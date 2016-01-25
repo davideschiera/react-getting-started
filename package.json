@@ -4,16 +4,19 @@
   "description": "Getting Started with React",
   "author": "davideschiera",
   "scripts": {
+    "start": "node dev-server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {},
   "devDependencies": {
     "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1",
     "html-webpack-plugin": "^2.7.2",
     "babel-core": "^6.4.5",
     "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
     "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react-dom": "^0.14.6",
+    "react-hot-loader": "^1.3.0"
   }
 }
