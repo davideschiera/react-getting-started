@@ -12,6 +12,15 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
+        preLoaders: [
+            {
+                test: /\.jsx$/,
+                include: [
+                    path.join(__dirname, 'src')
+                ],
+                loader: 'eslint'
+            }
+        ],
         loaders: []
     },
     plugins: [
