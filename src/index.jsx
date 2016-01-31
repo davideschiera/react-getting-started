@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
-import Title from './title'
+import Title from './title';
 
 ReactDOM.render(
     <Title />,
