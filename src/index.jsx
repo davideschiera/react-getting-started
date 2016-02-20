@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, Redirect, useRouterHistory } from 'react-router';
 import { createHashHistory } from 'history';
-import App from './app';
-import Title from './title';
+import App from './components/app';
+import Title from './components/title';
 
 //
 // Remove ...?_k=* from the HTTP query string added by
