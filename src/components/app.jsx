@@ -8,6 +8,7 @@ class App extends React.Component {
                 <ul>
                     <li><Link to="/" activeStyle={{ color: 'red' }}>Home</Link></li>
                     <li><Link to="/hello" activeStyle={{ color: 'red' }}>Hello, world!</Link></li>
+                    <li><Link to="/repos" activeStyle={{ color: 'red' }}>Repositories</Link></li>
                 </ul>
 
                 {/*
