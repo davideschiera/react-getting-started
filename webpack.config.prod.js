@@ -22,6 +22,15 @@ config.module.loaders = [
         loaders: [
             'babel?presets[]=es2015,presets[]=react'
         ]
+    },
+    {
+        test: /\.js$/,
+        include: [
+            path.join(__dirname, 'src')
+        ],
+        loaders: [
+            'babel?presets[]=es2015'
+        ]
     }
 ];
 
