@@ -15,7 +15,7 @@ class Title extends React.Component {
 }
 
 Title.propTypes = {
-    params: React.PropTypes.object,
+    params: React.PropTypes.object
 };
 
 export default Title;

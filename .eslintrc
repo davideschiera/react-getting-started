@@ -2,6 +2,11 @@
     "extends": "airbnb",
     "parser": "babel-eslint",
     "rules": {
-        "indent": [ 2, 4 ]
+        "indent": [ 2, 4 ],
+        "key-spacing": [2, {
+            "afterColon": true,
+            "align": "value"
+        }],
+        "comma-dangle": [2, "never"]
     }
 }
