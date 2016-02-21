@@ -3,7 +3,7 @@ import * as actions from '../actions';
 import RepoList from '../components/RepoList';
 
 const mapStateToProps = (state) => {
-    return state;
+    return state.repositories;
 }
 
 const mapDispatchToProps = (dispatch) => {

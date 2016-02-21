@@ -13,12 +13,21 @@ const appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 
 import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
-import repos from './reducers';
-import * as actions from './actions';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import repositories from './reducers';
+
+import { syncHistory, routeReducer } from 'react-router-redux';
+const reducers = combineReducers({
+    repositories,
+    routing: routeReducer
+});
+
+// Sync dispatched route actions to the history
+const reduxRouterMiddleware = syncHistory(appHistory);
 const store = createStore(
-    repos,
+    reducers,
     applyMiddleware(
+        reduxRouterMiddleware,
         thunkMiddleware
     )
 );
@@ -28,28 +37,29 @@ import Title from './components/title';
 import Repos from './containers/repos';
 import RepoList from './containers/repoList';
 
-function onReposUserEnter(nextState) {
-    //
-    // The store contains the user, and you want to let the store
-    // handles the app state completely. There are 2 sources of changes:
-    //   1. components, handled by dispacthing actions
-    //   2. route change
-    //
-    // Here you update the store when the route changes.
-    //
-    // NOTE: This should be replaced with react-router-redux
-    // (https://github.com/reactjs/react-router-redux)
-    //
-    store.dispatch(actions.routerChangedUser(nextState.params.user));
-}
+// function onReposUserEnter(nextState) {
+//     //
+//     // The store contains the user, and you want to let the store
+//     // handles the app state completely. There are 2 sources of changes:
+//     //   1. components, handled by dispacthing actions
+//     //   2. route change
+//     //
+//     // Here you update the store when the route changes.
+//     //
+//     // NOTE: This should be replaced with react-router-redux
+//     // (https://github.com/reactjs/react-router-redux)
+//     //
+//     store.dispatch(actions.routerChangedUser(nextState.params.user));
+// }
 
 function onReposEnter(nextState, replace) {
     //
     // Redirect to the currently selected repositories if you are
     // entering the route without parameters.
     //
+    debugger;
     if (nextState.location.pathname === '/repos') {
-        const user = store.getState().user;
+        const user = store.getState().repositories.user;
 
         if (user !== null && user !== '') {
             replace({
@@ -77,7 +87,7 @@ ReactDOM.render(
                 </Route>
 
                 <Route path="repos" component={Repos} onEnter={onReposEnter}>
-                    <Route path=":user" component={RepoList} onEnter={onReposUserEnter}/>
+                    <Route path=":user" component={RepoList} />
                 </Route>
             </Route>
         </Router>

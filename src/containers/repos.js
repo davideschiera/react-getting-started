@@ -1,16 +1,23 @@
 import { connect } from 'react-redux';
+import { routeActions } from 'react-router-redux';
 import * as actions from '../actions';
 import Repos from '../components/Repos';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        user: state.user
+        user: ownProps.params.user
     };
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        changeUser: (user, router) => dispatch(actions.changeUser(user, router))
+        changeUser: user => {
+            if (user === '') {
+                dispatch(routeActions.push('/repos'));
+            } else {
+                dispatch(routeActions.push(`/repos/${user}`));
+            }
+        }
     };
 }
 

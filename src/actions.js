@@ -9,11 +9,8 @@ export function changeUser(user, router) {
     // Note: When you change route the action 'route changed user'
     // will be called. Let that action be the one to fetch data.
     //
-    if (user === '') {
-        router.push('/repos');
-    } else {
-        router.push(`/repos/${user}`);
-    }
+    debugger;
+
 
     return {
         type: CHANGE_USER,

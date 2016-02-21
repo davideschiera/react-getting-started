@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch';
 import * as actions from './actions';
+import { UPDATE_LOCATION } from 'react-router-redux';
 
 const initialState = {
     user:       null,
@@ -11,8 +12,11 @@ const initialState = {
 }
 
 function reducer(state = initialState, action) {
+    debugger;
     switch (action.type) {
-        case actions.ROUTER_CHANGED_USER:
+        case UPDATE_LOCATION:
+            return state;
+
         case actions.CHANGE_USER:
             return Object.assign({}, state, {
                 user: action.user
