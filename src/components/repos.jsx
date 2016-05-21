@@ -61,7 +61,7 @@ class Repos extends React.Component {
         return (
             <div>
                 <h1>Repositories</h1>
-                <input value={this.state.user} onChange={onChange}/>
+                <input value={this.state.user} onChange={onChange} />
 
                 {this.props.children}
             </div>

@@ -77,7 +77,7 @@ ReactDOM.render(
                 </Route>
 
                 <Route path="repos" component={Repos} onEnter={onReposEnter}>
-                    <Route path=":user" component={RepoList} onEnter={onReposUserEnter}/>
+                    <Route path=":user" component={RepoList} onEnter={onReposUserEnter} />
                 </Route>
             </Route>
         </Router>
