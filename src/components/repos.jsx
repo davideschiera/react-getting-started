@@ -14,7 +14,7 @@ class Repos extends React.Component {
 
     componentWillMount() {
         this.setState({
-            user: this.props.user
+            user: this.props.user || ''
         });
     }
 
