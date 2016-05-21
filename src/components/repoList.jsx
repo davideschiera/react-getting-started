@@ -24,6 +24,8 @@ function renderContent(props) {
         return renderContentFailed(props.error);
     } else if (props.isLoaded) {
         return renderContentList(props.list);
+    } else {
+        return null;
     }
 }
 
