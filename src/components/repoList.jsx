@@ -27,15 +27,13 @@ function renderContent(props) {
     }
 }
 
-class RepoList extends React.Component {
-    render() {
-        return (
-            <div>
-                {renderContent(this.props)}
-            </div>
-        );
-    }
-}
+const RepoList = function render(props) {
+    return (
+        <div>
+            {renderContent(props)}
+        </div>
+    );
+};
 
 RepoList.propTypes = {
     list: React.PropTypes.arrayOf(React.PropTypes.shape({
