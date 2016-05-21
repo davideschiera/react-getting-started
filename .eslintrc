@@ -2,11 +2,13 @@
     "extends": "airbnb",
     "parser": "babel-eslint",
     "rules": {
-        "indent": [ 2, 4 ],
+        "indent": [ "error", 4 ],
         "key-spacing": [2, {
             "afterColon": true,
             "align": "value"
         }],
-        "comma-dangle": [2, "never"]
+        "comma-dangle": [2, "never"],
+        "react/jsx-indent": [ "error", 4 ],
+        "no-else-return": [ "off" ]
     }
 }
