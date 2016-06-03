@@ -19,14 +19,15 @@ config.output.filename = '[name].js';
 config.module.loaders = [
     {
         test: /\.jsx$/,
-        include: [
-            path.join(__dirname, 'src')
-        ],
-        loaders: [
-            'react-hot',
-            'babel?presets[]=es2015,presets[]=react'
-        ]
+        loader: 'babel-loader',
+        query: {
+            presets: ['es2015', 'react']
+        }
     },
+    // {
+    //     test: /\.jsx$/,
+    //     loader: 'react-hot'
+    // },
     {
         test: /\.js$/,
         include: [
