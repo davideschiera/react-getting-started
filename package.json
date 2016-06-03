@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dev-server.js",
     "clean": "rm -r build",
-    "build-dev": "webpack --config webpack.config.dev.js --progress --colors",
+    "build:dev": "webpack --config webpack.config.dev.js --progress --colors",
     "build": "webpack -p --config webpack.config.prod.js --progress --colors",
     "lint": "eslint src --ext .jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
