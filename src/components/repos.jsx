@@ -1,5 +1,5 @@
 import React from 'react';
-import debounce from 'lodash/function/debounce';
+import { debounce } from 'lodash';
 
 class Repos extends React.Component {
     constructor(props) {
